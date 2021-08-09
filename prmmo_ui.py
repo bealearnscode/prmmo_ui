@@ -40,13 +40,12 @@ else:
 
 # col1, col2 = st.columns([2,1])
 
-# def random_date_generator(start_date, range_in_days):
-#     days_to_add = np.arange(0, range_in_days)
-#     random_date = np.datetime64(start_date) + np.random.choice(days_to_add)
-#     return random_date
+def random_date_generator(start_date, range_in_days):
+    days_to_add = np.arange(0, range_in_days)
+    random_date = np.datetime64(start_date) + np.random.choice(days_to_add)
+    return random_date
 
-# date_data = random_date_generator('2022-08-08', 60)
-
+date_data = random_date_generator('2022-08-08', 60)
 # with col1:
 #     st.header('Lifecycle')
 
@@ -56,7 +55,8 @@ else:
 
 df = pd.DataFrame(
     np.random.randn(10, 3),
-    columns=('Item', 'Purchase Date', 'Best Supplier')
+    columns=('Item', 'Product Halted', 'Purchase Date'),
+
 )
 
 st.table(df)
